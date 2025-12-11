@@ -2,6 +2,8 @@
 
 A React component library focused on minimal aesthetics, vivid Framer Motion animations, and strict accessibility.
 
+🎨 **[View Live Demo →](https://trinh-ui.khoa.ma)**
+
 > ⚠️ **Preview Version**: This library is currently in active development. Component APIs, props, and theming structures are **subject to change without notice** as we refine the design system.
 
 ## Features
