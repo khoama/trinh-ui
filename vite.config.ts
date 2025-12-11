@@ -18,11 +18,12 @@ export default defineConfig(({ mode }) => {
             fileName: (format) => `index.${format === 'es' ? 'js' : 'cjs'}`,
           },
           rollupOptions: {
-            external: ['react', 'react-dom', 'framer-motion', 'lucide-react'],
+            external: ['react', 'react-dom', 'react/jsx-runtime', 'framer-motion', 'lucide-react'],
             output: {
               globals: {
                 react: 'React',
                 'react-dom': 'ReactDOM',
+                'react/jsx-runtime': 'react/jsx-runtime',
                 'framer-motion': 'FramerMotion',
                 'lucide-react': 'LucideReact',
               },

@@ -6,10 +6,13 @@
     "emitDeclarationOnly": true,
     "outDir": "./dist",
     "noEmit": false,
-    "allowImportingTsExtensions": false
+    "allowImportingTsExtensions": false,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "skipLibCheck": true
   },
   "include": [
-    "src/index.ts",
+    "src/**/*",
     "components/**/*",
     "context/**/*",
     "types.ts"
@@ -18,6 +21,8 @@
     "node_modules",
     "dist",
     "demos",
+    "App.tsx",
+    "index.tsx",
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.spec.ts",
