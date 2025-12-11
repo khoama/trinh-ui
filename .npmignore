@@ -1,0 +1,43 @@
+# Source files
+src/
+components/
+context/
+demos/
+
+# Development files
+*.tsx
+*.ts
+!dist/**/*.d.ts
+tsconfig.json
+vite.config.ts
+index.html
+index.tsx
+App.tsx
+types.ts
+metadata.json
+
+# Build artifacts
+node_modules/
+.DS_Store
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation site files
+demos/
+

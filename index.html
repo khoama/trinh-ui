@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trinh UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* --- System Theme (Docs UI) --- */
+        --primary: 24 24 27;      /* zinc-900 */
+        --surface: 255 255 255;   /* white */
+        --surface-alt: 244 244 245; /* zinc-100 */
+        --border: 228 228 231;    /* zinc-200 */
+        --text: 24 24 27;         /* zinc-900 */
+        --text-muted: 113 113 122; /* zinc-500 */
+        --error: 239 68 68;       /* red-500 */
+        --code-bg: 24 24 27;      /* zinc-900 */
+        --code-text: 228 228 231; /* zinc-200 */
+        
+        /* Docs Radius Defaults */
+        --radius: 0.75rem;
+
+        /* --- Library Theme (Scoped) --- */
+        --brand: 24 24 27;        /* Default Accent */
+        --radius-ui: 0.5rem;      /* Library Border Radius */
+        --border-ui: 1px;         /* Library Border Width */
+      }
+
+      .dark-mode {
+        /* System Theme Dark */
+        --primary: 250 250 250;   /* zinc-50 */
+        --surface: 24 24 27;      /* zinc-900 */
+        --surface-alt: 39 39 42;  /* zinc-800 */
+        --border: 63 63 70;       /* zinc-700 */
+        --text: 250 250 250;      /* zinc-50 */
+        --text-muted: 161 161 170; /* zinc-400 */
+        --error: 248 113 113;     /* red-400 */
+        --code-bg: 9 9 11;        /* zinc-950 */
+        --code-text: 161 161 170; /* zinc-400 */
+        
+        /* Library Dark Default */
+        --brand: 250 250 250;
+      }
+
+      body {
+        background-color: rgb(var(--surface));
+        color: rgb(var(--text));
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--border));
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--text-muted));
+      }
+
+      /* Utility to hide scrollbar but allow scrolling */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              // System Colors
+              primary: 'rgb(var(--primary) / <alpha-value>)',
+              surface: 'rgb(var(--surface) / <alpha-value>)',
+              'surface-alt': 'rgb(var(--surface-alt) / <alpha-value>)',
+              border: 'rgb(var(--border) / <alpha-value>)',
+              text: 'rgb(var(--text) / <alpha-value>)',
+              muted: 'rgb(var(--text-muted) / <alpha-value>)',
+              error: 'rgb(var(--error) / <alpha-value>)',
+              'code-bg': 'rgb(var(--code-bg) / <alpha-value>)',
+              'code-text': 'rgb(var(--code-text) / <alpha-value>)',
+              
+              // Library Scoped Color
+              brand: 'rgb(var(--brand) / <alpha-value>)',
+            },
+            borderRadius: {
+              'none': '0',
+              'sm': '0.375rem',
+              DEFAULT: '0.5rem',
+              'md': '0.5rem',
+              'lg': '0.75rem',
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              'full': '9999px',
+              
+              // Library Scoped Radius
+              'ui-sm': 'calc(var(--radius-ui) - 2px)',
+              'ui': 'var(--radius-ui)',
+              'ui-md': 'var(--radius-ui)',
+              'ui-lg': 'calc(var(--radius-ui) + 4px)',
+            },
+            borderWidth: {
+              DEFAULT: '1px',
+              '0': '0',
+              '2': '2px',
+              
+              // Library Scoped Border Width
+              'ui': 'var(--border-ui)',
+            }
+          },
+        },
+      }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="antialiased selection:bg-brand selection:text-surface">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
